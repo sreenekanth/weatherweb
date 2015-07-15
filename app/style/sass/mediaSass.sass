@@ -62,21 +62,32 @@ BREAKPOINTS
       
  }
 
-.main .img {
-    background: url('http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?v=at&w=320&h=180&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0') no-repeat;
-   
-    @include breakpoint(retina) { 
-     background: url('http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?api=7db9fe61-7414-47b5-9871-e17d87b8b6a0&h=598&w=640&v=at') no-repeat;
-  
-    }
-    @include breakpoint(desktop) { }
-  @include breakpoint(laptop) { }   
+// mixin for replacing text content with an image, while text is still accessible to screen readers
+@mixin image-replace($imageURL) {
+ background: url($imageURL) no-repeat;
+ text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
-    @include breakpoint(tablet) { }
-    @include breakpoint(handheld) { }
-    @include breakpoint(mobileonly) { }
+.main h1 {
+
+ display: block;
+ width:100%;
+  height: 400px;
+  font-size: 2em;
+  font-weight: bold;
+  @include image-replace("http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?v=at&w=320&h=180&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0");
+
+
+  @include breakpoint(retina) { 
+  @include image-replace("http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?api=7db9fe61-7414-47b5-9871-e17d87b8b6a0&h=598&w=640&v=at") ;
+    }
+}
+   
+    
       
- }
+ 
 
 
  /**
@@ -107,13 +118,13 @@ BREAKPOINTS
  
 
  .main{
- @include gradient($background_color, blue);
+ @include gradient(white, blue);
  }
 
  .sidebar{
- @include gradient($background_color, yellow);
+ @include gradient(red, yellow);
  }
 
  .instruction {
- @include gradient($background_color, green);
+ @include gradient(blue, green);
  }

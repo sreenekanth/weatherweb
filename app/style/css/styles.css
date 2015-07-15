@@ -35,13 +35,24 @@ BREAKPOINTS
   }
 }
 
-.main img {
+.main h1 {
+  display: block;
+  width: 100%;
+  height: 400px;
+  font-size: 2em;
+  font-weight: bold;
   background: url("http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?v=at&w=320&h=180&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0") no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (min-width: 70em) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-  .main img {
+  .main h1 {
     background: url("http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?api=7db9fe61-7414-47b5-9871-e17d87b8b6a0&h=598&w=640&v=at") no-repeat;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 
