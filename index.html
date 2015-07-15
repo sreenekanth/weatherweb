@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="weather">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Weather</title>
-	<link rel="stylesheet" type="text/css" href="app/style/css/style.css">
-  <script src="lib/angular.min.js"></script>
-  <script src="lib/angular-route.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="app/style/css/styles.css">
+
 </head>
 <body ng-controller="homeCtrl">
  <div ng-view></div>
-</body>
+  <!--<script src="lib/angular.min.js"></script>
+  <script src="lib/angular-route.min.js"></script> -->
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+
+  
+   <script src="app/app.js"></script> 
+   <script src="app/controller/homeCtrl.js"></script> 
+  </body>
 </html>

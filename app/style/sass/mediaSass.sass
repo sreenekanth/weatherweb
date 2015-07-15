@@ -5,24 +5,30 @@ BREAKPOINTS
  @mixin breakpoint($point) {
 
   @if $point == retina  {
-     @media ((min-width: 70em) and  (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) ) { @content ; }
+     @media (min-width: 70em) and  (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)
+      { @content ; }
   }
 
    @else if $point == desktop  {
-     @media ((min-width: 70em) and  (-webkit-min-device-pixel-ratio: 1)) { @content ; }
+     @media (min-width: 70em) and  (-webkit-min-device-pixel-ratio: 1)
+     { @content ; }
   }
 
    @else if $point == laptop {
-     @media (min-width: 64em) { @content ; }
+     @media (min-width: 64em)
+      { @content ; }
   }
     @else if $point == tablet {
-     @media (min-width: 50em) { @content ; }
+     @media (min-width: 50em)
+      { @content ; }
   }
    @else if $point == handheld {
-     @media (min-width: 37.5em)  { @content ; }
+     @media (min-width: 37.5em)  
+     { @content ; }
   }
    @else if $point == mobileonly {
-     @media (max-width: 37.5em)  { @content ; }
+     @media (max-width: 37.5em) 
+      { @content ; }
 
   }
  
