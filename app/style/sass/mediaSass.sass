@@ -1,0 +1,113 @@
+/*********************
+BREAKPOINTS
+*********************/
+
+ @mixin breakpoint($point) {
+
+  @if $point == retina  {
+     @media ((min-width: 70em) and  (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) ) { @content ; }
+  }
+
+   @else if $point == desktop  {
+     @media ((min-width: 70em) and  (-webkit-min-device-pixel-ratio: 1)) { @content ; }
+  }
+
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == handheld {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+   @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+ 
+}
+
+
+.main,
+ .sidebar,
+ .instruction {
+    width:100%;
+    height: auto;
+    float:left;
+    margin:0;
+    padding: 0;
+
+    @include breakpoint(retina) { 
+      width:33.33333%;
+  
+    }
+    @include breakpoint(desktop) { 
+      width:33.33333%;
+  
+    }
+  @include breakpoint(laptop) { 
+      width:33.33333%;
+  
+    }
+    @include breakpoint(tablet) { }
+    @include breakpoint(handheld) { }
+    @include breakpoint(mobileonly) { }
+      
+ }
+
+.main .img {
+    background: url('http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?v=at&w=320&h=180&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0') no-repeat;
+   
+    @include breakpoint(retina) { 
+     background: url('http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?api=7db9fe61-7414-47b5-9871-e17d87b8b6a0&h=598&w=640&v=at') no-repeat;
+  
+    }
+    @include breakpoint(desktop) { }
+  @include breakpoint(laptop) { }   
+
+    @include breakpoint(tablet) { }
+    @include breakpoint(handheld) { }
+    @include breakpoint(mobileonly) { }
+      
+ }
+
+
+ /**
+ * Gradient mixin setting
+ */
+
+
+ @mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+ 
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
+
+
+
+
+ 
+
+ .main{
+ @include gradient($background_color, blue);
+ }
+
+ .sidebar{
+ @include gradient($background_color, yellow);
+ }
+
+ .instruction {
+ @include gradient($background_color, green);
+ }

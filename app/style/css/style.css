@@ -1,0 +1,53 @@
+html, body {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+
+ .main,
+ .sidebar,
+ .instruction {
+    width:100%;
+    height: auto;
+    float:left;
+    margin:0;
+    padding: 0;
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+ .main,
+ .sidebar,
+ .instruction {
+    width:33.33333%;
+    float:left;
+
+}
+
+
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+
+ .main,
+ .sidebar,
+ .instruction {
+    width:33.33333%;
+    float:left;
+
+}
+
+
+}
+
